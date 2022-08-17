@@ -40,7 +40,7 @@ DWORD WINAPI Th_Client(void *) //클라이언트 쓰레드
 
 	sockaddr_in remote;
 	remote.sin_family = AF_INET;
-	remote.sin_addr.S_un.S_un_b = { 10,1,1,130 };
+	remote.sin_addr.S_un.S_un_b = { 127, 0, 0, 1 };
 	remote.sin_port = htons(g_wPort);
 	if (0 != connect(clientSock, (sockaddr*)&remote, sizeof(remote)))
 		return -1;
@@ -66,7 +66,7 @@ int main(void)
 
 	DWORD client_dwRet = WaitForSingleObject(client_Thread, INFINITE);
 	closesocket(g_listenSock);
-	DWORD server_dwRet = WaitForSingleObject(server_Thread, INFINITE);	
+	//DWORD server_dwRet = WaitForSingleObject(server_Thread, INFINITE);	
 
 	return 0;
 }
