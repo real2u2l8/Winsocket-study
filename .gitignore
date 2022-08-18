@@ -1,7 +1,10 @@
 ### Visual Studio 2022 ###
 
-\Output\
-\Build\
+[Oo]utput/
+[Bb]uild/
+*.user
+.vs/
+*.aps
 ### C++ ###
 # Prerequisites
 *.d
